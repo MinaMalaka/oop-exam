@@ -26,8 +26,8 @@ if ($request->check($request->post('submit'))) {
     $image = "images/" . $_FILES['file']["name"];
 
     $validation->lastValidate("name", $name, ["Required", "Str"]);
-    $validation->lastValidate("description", $description, ["required", "str"]);
     $validation->lastValidate("price", $price, ["required", "price"]);
+    $validation->lastValidate("description", $description, ["required", "str"]);
     $validation->lastValidate("image", $imageName, ["required", "img"]);
     $errors = $validation->getError();
     if (empty($errors)) {
