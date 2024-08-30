@@ -25,8 +25,8 @@ if ($request->check($request->post('submit')) && $request->check($request->get('
     $uploaded = move_uploaded_file($imgTemp, "../images/$imageName");
     $image = "images/" . $_FILES['file']["name"];
     $validation->lastValidate("name", $name, ["required", "str"]);
-    $validation->lastValidate("description", $description, ["required", "str"]);
     $validation->lastValidate("price", $price, ["required", "price"]);
+    $validation->lastValidate("description", $description, ["required", "str"]);
     $validation->lastValidate("image", $imageName, ["required", "img"]);
     $errors = $validation->geterror();
     if (empty($errors)) {
